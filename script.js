@@ -55,12 +55,29 @@ const semaforoDesligado = () => semaforo.src.includes("desligado")
 
 //ARROW FUNCTION
 
-const vermelho = () => semaforo.src = "img/vermelho.png"
+const pararAutomatico = () => clearInterval(intervalo)
 
-const amarelo = () => semaforo.src = "img/amarelo.png"
+const vermelho = (evento) => {
+    if (evento){
+       pararAutomatico()
+    }
+    semaforo.src = "img/vermelho.png" 
+}
 
-const verde = () => semaforo.src = "img/verde.png"
+const amarelo = (evento) => {
+    if (evento){
+        pararAutomatico()
+    }
+    semaforo.src = "img/amarelo.png"
+}
 
+const verde = (evento) => {
+    if (evento){
+        pararAutomatico()
+    }
+    semaforo.src = "img/verde.png"
+}
+    
 
 
 const trocarImagem = () => {
@@ -85,7 +102,7 @@ const deixarAutomatico = () => {
         bAutomatico.textContent = "Parar"
     }
     else{
-        clearInterval(intervalo)
+        pararAutomatico()
         bAutomatico.textContent = "Automático"
     }
 }
