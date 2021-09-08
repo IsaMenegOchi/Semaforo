@@ -12,17 +12,18 @@ const semaforoDesligado = () => semaforo.src.includes("desligado")
 
 //FUNÇÕES NORMAIS
 
-function vermelho(){
-    semaforo.src = "img/vermelho.png"
-}
+// function vermelho(){
+//     semaforo.src = "img/vermelho.png"
+// }
 
-function amarelo(){
-    semaforo.src = "img/amarelo.png"
-}
+// function amarelo(){
+//     semaforo.src = "img/amarelo.png"
+// }
 
-function verde(){
-    semaforo.src = "img/verde.png" 
-}
+// function verde(){
+//     semaforo.src = "img/verde.png" 
+
+// }
 
 
 // function trocarImagem(){
@@ -54,17 +55,17 @@ function verde(){
 
 //ARROW FUNCTION
 
-// const vermelho = () => semaforo.src = "img/vermelho.png"
+const vermelho = () => semaforo.src = "img/vermelho.png"
 
-// const amarelo = () => semaforo.src = "img/amarelo.png"
+const amarelo = () => semaforo.src = "img/amarelo.png"
 
-// const verde = () => semaforo.src = "img/verde.png"
+const verde = () => semaforo.src = "img/verde.png"
 
 
 
 const trocarImagem = () => {
     
-    if(semaforoNoVerde() || semaforoDesligado ()){
+    if(semaforoNoVerde() || semaforoDesligado()){
         vermelho()
     }
     else if (semaforoNoVermelho()){
@@ -79,7 +80,7 @@ const deixarAutomatico = () => {
    
     const bAutomatico = document.getElementById("automatico")
     
-    if(bAutomatico.textContent == "Automático"){
+    if(bAutomatico.textContent == "Automático") {
         intervalo = setInterval(trocarImagem, 1000);
         bAutomatico.textContent = "Parar"
     }
@@ -94,5 +95,5 @@ const deixarAutomatico = () => {
 
 document.getElementById("vermelho").addEventListener("click", vermelho)
 document.getElementById("amarelo").addEventListener("click", amarelo)
-document.getElementById("verde").addEventListener("click", verde)
+document.getElementById("verde").addEventListener("click", verde,)
 document.getElementById("automatico").addEventListener("click", deixarAutomatico)
